@@ -19,15 +19,15 @@ public class Statistics {
         ArrayList<Double> sorted = new ArrayList<>(values);
         Collections.sort(values);
 
-        int midIndex = sorted.size()/2;
+        int midIndex = sorted.size() / 2;
         return sorted.get(midIndex);
     }
 
     public static double calcStdev(ArrayList<Double> values) {
         double mean = Statistics.calcMean(values);
         double avvikelse = 0;
-        for (int i= 0; i < values.size(); i++) {
-            avvikelse += Math.pow((values.get(i)-mean), 2);
+        for (int i = 0; i < values.size(); i++) {
+            avvikelse += Math.pow((values.get(i) - mean), 2);
         }
         double varians = avvikelse / values.size();
 
@@ -35,4 +35,33 @@ public class Statistics {
         return stdev;
     }
 
+    public static double calcType(ArrayList<Double> values) {
+        ArrayList<Double> sorted = new ArrayList<>(values);
+        Collections.sort(values);
+
+        double mostCommonNumber = values.get(0);
+        double currentNumber = values.get(0);
+        int currentCount = 1;
+        int maxCount = 1;
+        for (int i = 1; i < values.size(); i++) {
+            if (values.get(i) == currentNumber) {
+                currentCount++;
+            } else {
+                if (currentCount > maxCount) {
+                    maxCount = currentCount;
+                    mostCommonNumber = currentNumber;
+                }
+                currentNumber = values.get(i);
+                currentCount = 1;
+
+
+            }
+            if (currentCount > maxCount) {
+                mostCommonNumber = currentNumber;
+            }
+
+        }
+
+        return mostCommonNumber;
+    }
 }
