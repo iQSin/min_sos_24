@@ -64,4 +64,24 @@ public class Statistics {
 
         return mostCommonNumber;
     }
+
+    public static double calcLQ(ArrayList<Double> values) {
+        ArrayList<Double> sorted = new ArrayList<>(values);
+        Collections.sort(values);
+
+        double lqIndex = sorted.size() * 0.25;
+        return sorted.get((int) lqIndex);
+    }
+    public static double calcUQ(ArrayList<Double> values) {
+        ArrayList<Double> sorted = new ArrayList<>(values);
+        Collections.sort(values);
+
+        double uqIndex = sorted.size() * 0.75;
+        return sorted.get((int) uqIndex);
+    }
+    public static double calcIQR(ArrayList<Double> values) {
+    double lq = calcLQ(values);
+    double uq = calcUQ(values);
+        return uq-lq;
+    }
 }
