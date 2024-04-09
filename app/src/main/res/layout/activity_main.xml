@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/outText"
-        android:layout_width="182dp"
-        android:layout_height="122dp"
+        android:layout_width="226dp"
+        android:layout_height="166dp"
         android:text="Code Challenge"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Namn"
         android:inputType="text"
